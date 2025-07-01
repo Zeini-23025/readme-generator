@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 interface SkillsSelectorProps {
   onSelectSkill: (skill: string) => void;
@@ -11,7 +12,7 @@ const skillsData = {
     'JavaScript', 'TypeScript', 'Python', 'Java', 'C#', 'PHP', 'C++', 'Go', 'Ruby', 'Rust'
   ],
   'Frontend': [
-    'React', 'Vue', 'Angular', 'Svelte', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'HTML', 'CSS'
+    'React', 'Vue', 'Angular', 'Svelte', 'Next.js', 'Bootstrap', 'HTML', 'CSS'
   ],
   'Backend & Bases de données': [
     'Node.js', 'Express', 'NestJS', 'Django', 'Flask', 'Spring', 'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'Firebase'
@@ -31,24 +32,21 @@ const SkillsSelector: React.FC<SkillsSelectorProps> = ({ onSelectSkill, onDesele
   };
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-medium text-gray-900">Skills & Technologies</h2>
+    <div className="mb-4">
+      <h2 className="h5 mb-3">Skills & Technologies</h2>
       {Object.entries(skillsData).map(([category, skills]) => (
-        <div key={category}>
-          <h3 className="text-md font-semibold mb-2">{category}</h3>
-          <div className="flex flex-wrap gap-2">
+        <div key={category} className="mb-3">
+          <h3 className="h6 mb-2">{category}</h3>
+          <div className="d-flex flex-wrap gap-2">
             {skills.map((skill) => (
-              <span
+              <Button
                 key={skill}
-                className={`px-3 py-1 border rounded-full cursor-pointer text-sm ${
-                  selectedSkills.includes(skill)
-                    ? 'bg-indigo-500 text-white border-indigo-500'
-                    : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
-                }`}
+                variant={selectedSkills.includes(skill) ? 'primary' : 'outline-secondary'}
+                size="sm"
                 onClick={() => handleSkillClick(skill)}
               >
                 {skill}
-              </span>
+              </Button>
             ))}
           </div>
         </div>

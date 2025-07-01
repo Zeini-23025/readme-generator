@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+# GitHub README Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application that allows users to generate a stylish `README.md` file for their GitHub profiles. It provides a user-friendly form to input personal information, select a template style, choose skills and technologies, and automatically integrate GitHub statistics.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Personal Information:** Input your full name, GitHub username, custom section name, bio, email, Twitter/X handle, and portfolio/website URL.
+*   **Template Selection:** Choose from 5 predefined README styles: Professional, Funny, Joke, Mini, and Creative.
+*   **Skills & Technologies:** Select your programming languages, frontend, backend & database, and tools & DevOps skills from categorized lists.
+*   **GitHub Stats Integration:** Automatically display your GitHub profile statistics, top languages, and streak stats using the Vercel API.
+*   **Real-time Preview:** See a live preview of your generated `README.md` as you fill out the form.
+*   **Copy & Download:** Easily copy the generated Markdown content or download it as a `README.md` file.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   **React:** Frontend JavaScript library for building user interfaces.
+*   **Bootstrap:** CSS framework for responsive and mobile-first front-end web development.
+*   **React-Hook-Form:** For efficient and flexible form management.
+*   **React-Markdown:** For rendering Markdown content in React components.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How to Run Locally
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+To get this project up and running on your local machine, follow these steps:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/read-jen.git
+    cd read-jen
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will be accessible at `http://localhost:5173/` (or another port if 5173 is in use).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## How to Contribute
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+We welcome contributions to this project! If you'd like to contribute, please follow these guidelines:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Fork the repository.**
+2.  **Create a new branch** for your feature or bug fix:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+    or
+    ```bash
+    git checkout -b bugfix/issue-description
+    ```
+3.  **Make your changes.**
+4.  **Commit your changes** with a clear and concise message:
+    ```bash
+    git commit -m "feat: Add new feature"
+    ```
+    or
+    ```bash
+    git commit -m "fix: Resolve bug in X"
+    ```
+5.  **Push your branch** to your forked repository:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+6.  **Open a Pull Request** to the `main` branch of the original repository.
+
+Please ensure your code adheres to the existing style and conventions.

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 
 interface TemplateSelectorProps {
   onSelectTemplate: (template: string) => void;
@@ -15,24 +16,23 @@ const templates = [
 
 const TemplateSelector: React.FC<TemplateSelectorProps> = ({ onSelectTemplate, selectedTemplate }) => {
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-medium text-gray-900">Sélection du style de template</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="mb-4">
+      <h2 className="h5 mb-3">Sélection du style de template</h2>
+      <Row xs={1} md={2} lg={3} className="g-3">
         {templates.map((template) => (
-          <div
-            key={template.name}
-            className={`p-4 border rounded-lg cursor-pointer ${
-              selectedTemplate === template.name
-                ? 'border-indigo-500 ring-2 ring-indigo-500'
-                : 'border-gray-300 hover:border-gray-400'
-            }`}
-            onClick={() => onSelectTemplate(template.name)}
-          >
-            <h3 className="text-md font-semibold">{template.name}</h3>
-            <p className="text-sm text-gray-500">{template.description}</p>
-          </div>
+          <Col key={template.name}>
+            <Card
+              className={`h-100 cursor-pointer ${selectedTemplate === template.name ? 'border-primary shadow' : ''}`}
+              onClick={() => onSelectTemplate(template.name)}
+            >
+              <Card.Body>
+                <Card.Title>{template.name}</Card.Title>
+                <Card.Text className="text-muted">{template.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 };

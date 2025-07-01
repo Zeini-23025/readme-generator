@@ -1,8 +1,19 @@
 import ReactMarkdown from 'react-markdown';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { Button } from 'react-bootstrap';
+
+interface FormData {
+  fullName?: string;
+  githubUsername?: string;
+  customSectionName?: string;
+  bio?: string;
+  email?: string;
+  twitter?: string;
+  portfolioUrl?: string;
+}
 
 interface PreviewProps {
-  formData: any;
+  formData: FormData;
   selectedTemplate: string | null;
   selectedSkills: string[];
 }
@@ -11,11 +22,7 @@ const Preview: React.FC<PreviewProps> = ({ formData, selectedTemplate, selectedS
   const [copied, setCopied] = useState(false);
   const [markdown, setMarkdown] = useState('');
 
-  useEffect(() => {
-    setMarkdown(generateMarkdown());
-  }, [formData, selectedTemplate, selectedSkills]);
-
-  const generateMarkdown = () => {
+  const generateMarkdown = useCallback(() => {
     const { fullName, githubUsername, customSectionName, bio, email, twitter, portfolioUrl } = formData;
 
     const skillsList = selectedSkills.map(skill => `\`${skill}\``).join(' ');
@@ -46,7 +53,11 @@ const Preview: React.FC<PreviewProps> = ({ formData, selectedTemplate, selectedS
     }
 
     return generatedMarkdown;
-  };
+  }, [formData, selectedTemplate, selectedSkills]);
+
+  useEffect(() => {
+    setMarkdown(generateMarkdown());
+  }, [generateMarkdown]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(markdown);
@@ -65,20 +76,20 @@ const Preview: React.FC<PreviewProps> = ({ formData, selectedTemplate, selectedS
   };
 
   return (
-    <div className="prose relative">
-      <div className="flex space-x-2 mb-4">
-        <button
+    <div>
+      <div className="d-flex gap-2 mb-3">
+        <Button
           onClick={handleCopy}
-          className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+          variant="secondary"
         >
           {copied ? 'Copied!' : 'Copy Markdown'}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleDownload}
-          className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+          variant="secondary"
         >
           Download README.md
-        </button>
+        </Button>
       </div>
       <ReactMarkdown>{markdown}</ReactMarkdown>
     </div>
