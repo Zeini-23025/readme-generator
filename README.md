@@ -24,8 +24,8 @@ To get this project up and running on your local machine, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/read-jen.git
-    cd read-jen
+    git clone https://github.com//Zeini-23025/readme-generator.git
+    cd readme-generator
     ```
 2.  **Install dependencies:**
     ```bash
