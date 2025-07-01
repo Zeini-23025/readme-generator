@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 const Form = ({ setFormData }) => {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, watch } = useForm();
 
   watch((data) => {
     setFormData(data);
@@ -10,13 +10,35 @@ const Form = ({ setFormData }) => {
   return (
     <form className="space-y-4">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-          Name
+        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+          Nom complet
         </label>
         <input
           type="text"
-          id="name"
-          {...register('name')}
+          id="fullName"
+          {...register('fullName')}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        />
+      </div>
+      <div>
+        <label htmlFor="githubUsername" className="block text-sm font-medium text-gray-700">
+          Nom d'utilisateur GitHub
+        </label>
+        <input
+          type="text"
+          id="githubUsername"
+          {...register('githubUsername')}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        />
+      </div>
+      <div>
+        <label htmlFor="customSectionName" className="block text-sm font-medium text-gray-700">
+          Nom de section personnalisée
+        </label>
+        <input
+          type="text"
+          id="customSectionName"
+          {...register('customSectionName')}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
@@ -32,35 +54,36 @@ const Form = ({ setFormData }) => {
         />
       </div>
       <div>
-        <label htmlFor="technologies" className="block text-sm font-medium text-gray-700">
-          Technologies (comma separated)
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email
         </label>
         <input
-          type="text"
-          id="technologies"
-          {...register('technologies')}
+          type="email"
+          id="email"
+          {...register('email')}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div>
-        <label htmlFor="projects" className="block text-sm font-medium text-gray-700">
-          Projects/Portfolio (comma separated links)
+        <label htmlFor="twitter" className="block text-sm font-medium text-gray-700">
+          Twitter / X
         </label>
         <input
           type="text"
-          id="projects"
-          {...register('projects')}
+          id="twitter"
+          {...register('twitter')}
+          placeholder="@yourhandle"
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
       <div>
-        <label htmlFor="github" className="block text-sm font-medium text-gray-700">
-          GitHub Username
+        <label htmlFor="portfolioUrl" className="block text-sm font-medium text-gray-700">
+          Portfolio / Site web
         </label>
         <input
-          type="text"
-          id="github"
-          {...register('github')}
+          type="url"
+          id="portfolioUrl"
+          {...register('portfolioUrl')}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
