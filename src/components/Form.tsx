@@ -8,64 +8,64 @@ const Form = ({ setFormData }) => {
   });
 
   return (
-    <form className="space-y-4">
-      <div>
-        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+    <form>
+      <div className="mb-3">
+        <label htmlFor="fullName" className="form-label">
           Nom complet
         </label>
         <input
           type="text"
           id="fullName"
           {...register('fullName')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="githubUsername" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="githubUsername" className="form-label">
           Nom d'utilisateur GitHub
         </label>
         <input
           type="text"
           id="githubUsername"
           {...register('githubUsername')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="customSectionName" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="customSectionName" className="form-label">
           Nom de section personnalisée
         </label>
         <input
           type="text"
           id="customSectionName"
           {...register('customSectionName')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="bio" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="bio" className="form-label">
           Bio
         </label>
         <textarea
           id="bio"
           {...register('bio')}
           rows={3}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">
           Email
         </label>
         <input
           type="email"
           id="email"
           {...register('email')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="twitter" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="twitter" className="form-label">
           Twitter / X
         </label>
         <input
@@ -73,18 +73,18 @@ const Form = ({ setFormData }) => {
           id="twitter"
           {...register('twitter')}
           placeholder="@yourhandle"
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
-      <div>
-        <label htmlFor="portfolioUrl" className="block text-sm font-medium text-gray-700">
+      <div className="mb-3">
+        <label htmlFor="portfolioUrl" className="form-label">
           Portfolio / Site web
         </label>
         <input
           type="url"
           id="portfolioUrl"
           {...register('portfolioUrl')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="form-control"
         />
       </div>
     </form>
