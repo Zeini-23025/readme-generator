@@ -1,7 +1,21 @@
 import { useForm } from 'react-hook-form';
 
-const Form = ({ setFormData }) => {
-  const { register, watch } = useForm();
+interface FormData {
+  fullName?: string;
+  githubUsername?: string;
+  customSectionName?: string;
+  bio?: string;
+  email?: string;
+  twitter?: string;
+  portfolioUrl?: string;
+}
+
+interface FormProps {
+  setFormData: (data: FormData) => void;
+}
+
+const Form = ({ setFormData }: FormProps) => {
+  const { register, watch } = useForm<FormData>();
 
   watch((data) => {
     setFormData(data);
