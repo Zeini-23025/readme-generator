@@ -24,8 +24,8 @@
 
 1.  **استنساخ المستودع:**
     ```bash
-    git clone https://github.com/your-username/read-jen.git
-    cd read-jen
+    git clone https://github.com/OpenRim/readme-generator.git
+    cd readme-generator
     ```
 2.  **تثبيت التبعيات:**
     ```bash
@@ -39,30 +39,58 @@
 
 ## كيفية المساهمة
 
-نرحب بالمساهمات في هذا المشروع! إذا كنت ترغب في المساهمة، يرجى اتباع هذه الإرشادات:
+المساهمات هي ما يجعل مجتمع المصادر المفتوحة مكانًا رائعًا للتعلم والإلهام والإبداع. أي مساهمات تقدمها هي موضع تقدير كبير.
 
-1.  **قم بتفرع المستودع (Fork the repository).**
-2.  **أنشئ فرعًا جديدًا** لميزتك أو إصلاح الأخطاء:
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-    أو
-    ```bash
-    git checkout -b bugfix/issue-description
-    ```
-3.  **قم بإجراء تغييراتك.**
-4.  **قم بتثبيت تغييراتك** برسالة واضحة وموجزة:
-    ```bash
-    git commit -m "feat: إضافة ميزة جديدة"
-    ```
-    أو
-    ```bash
-    git commit -m "fix: حل مشكلة في X"
-    ```
-5.  **ادفع فرعك** إلى المستودع المتفرع الخاص بك:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-6.  **افتح طلب سحب (Pull Request)** إلى الفرع `main` للمستودع الأصلي.
+تم بناء هذا المشروع باستخدام React و TypeScript. نحن نتبع ممارسات الترميز القياسية ونستخدم ESLint للتدقيق. يرجى التأكد من أن مساهماتك تلتزم بهذه المعايير.
 
-يرجى التأكد من أن التعليمات البرمجية الخاصة بك تلتزم بالنمط والاتفاقيات الحالية.
+### إنشاء طلب سحب (Pull Request)
+
+1.  **عمل Fork للمشروع:** انقر فوق زر "Fork" في أعلى يمين صفحة المستودع الرئيسية. هذا ينشئ نسخة من المشروع في حساب GitHub الخاص بك.
+
+2.  **استنساخ نسختك (Fork):**
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/readme-generator.git
+    cd readme-generator
+    ```
+
+3.  **إنشاء فرع جديد:** قم بإنشاء اسم فرع وصفي لميزتك الجديدة أو إصلاحك.
+    *   لميزة جديدة:
+        ```bash
+        git checkout -b feature/AmazingFeature
+        ```
+    *   لإصلاح خطأ:
+        ```bash
+        git checkout -b fix/SomeBug
+        ```
+
+4.  **إجراء التغييرات الخاصة بك:** قم بتنفيذ ميزتك أو إصلاح الخطأ.
+
+5.  **تثبيت تغييراتك (Commit):** استخدم رسالة تثبيت تقليدية لوصف تغييراتك بوضوح.
+    *   لميزة جديدة:
+        ```bash
+        git commit -m 'feat: Add some AmazingFeature'
+        ```
+    *   لإصلاح خطأ:
+        ```bash
+        git commit -m 'fix: Correct SomeBug'
+        ```
+
+6.  **الدفع إلى فرعك (Push):**
+    ```bash
+    git push origin feature/AmazingFeature
+    ```
+
+7.  **فتح طلب سحب (Pull Request):** انتقل إلى المستودع الأصلي على GitHub وانقر على زر "New pull request". املأ قالب طلب السحب بوصف واضح لتغييراتك.
+
+## الترخيص
+
+هذا المشروع مرخص بموجب ترخيص MIT - راجع ملف [LICENSE](LICENSE) للحصول على التفاصيل.
+
+## الاتصال
+
+- **GitHub:** [zeini-23025](https://github.com/zeini-23025)
+- **البريد الإلكتروني:** zeiny.cheikh.dev@gmail.com
+
+## ⭐ أظهر دعمك
+
+إذا وجدت هذا المشروع مفيدًا، فيرجى التفكير في إعطائه ⭐ لإظهار دعمك!
